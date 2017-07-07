@@ -1,6 +1,6 @@
 import React from 'react';
 
-const helloWorld = () => {
+const SbHeader = () => {
   return (
     <div>
       <h1>Football Scoreboard</h1>
@@ -8,5 +8,5 @@ const helloWorld = () => {
   );
 };
 
-export default helloWorld;
+export default SbHeader;
 

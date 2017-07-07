@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
 //components
-import helloWorld from './components/helloWorld';
+import SbHeader from './components/header';
 
 class App extends Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <helloWorld />
+        <SbHeader/>
       </div> 
     );
   }
