@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
+//components
+import helloWorld from './components/helloWorld';
+
 class App extends Component {
-  constructor() {
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -13,8 +16,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        Hi world
-      </div>
+        <helloWorld />
+      </div> 
     );
   }
 
