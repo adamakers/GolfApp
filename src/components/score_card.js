@@ -21,7 +21,7 @@ class ScoreCard extends Component {
   render() {
     const team = this.state.teamInfo;
     return (
-      <div className="home-score">
+      <div className="team-score">
         <h2>{(team.name)}</h2>
       </div>
     );

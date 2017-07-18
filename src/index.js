@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 //components
 import SbHeader from './components/header';
-import HomeScore from './components/score_card';
+import ScoreCard from './components/score_card';
 
 class App extends Component {
   constructor(props) {
@@ -35,7 +35,7 @@ class App extends Component {
     return (
       <div>
         <SbHeader/>
-        <HomeScore teamInfo={this.state.home} />
+        <ScoreCard teamInfo={this.state.home} />
         {/* <AwayScore awayPoints={this.state.away} /> */}
       </div> 
     );
