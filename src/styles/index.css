@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+    /* GENERAL FONT */
+    background-color: lightblue;
+}
+
+.inner_contain {
+  background-color: red;
+  border-radius: 5px;
+  border: 2px solid green;
+}
