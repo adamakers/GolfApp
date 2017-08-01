@@ -11,7 +11,15 @@ const ScoreCard = (props) => {
   return (
     <div className="team">
       <h2>{team.name}</h2>
+      <div className="possession-box"></div>
       <h3 className="team-score">{team.score}</h3>
+      
+      {/*loop through and fill out how many boxes per timeouts left  */}
+      <ul>
+        <li className="timeout-box"></li>
+        <li className="timeout-box"></li>
+        <li className="timeout-box"></li>
+      </ul>
     </div>
   );
 }
