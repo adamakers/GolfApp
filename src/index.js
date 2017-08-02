@@ -5,6 +5,9 @@ import _ from 'lodash';
 
 //components
 import ScoreCard from './components/score_card';
+import BigTimer from './components/big_timer';
+import GameStats from './components/game_stats';
+import ScoreBtns from './components/score_btns.js';
 
 //Styles
 import styles from './styles/index.css';
@@ -13,8 +16,6 @@ import styles from './styles/index.css';
 class App extends Component {
   constructor(props) {
     super(props);
-
-    this.addTouchdown = this.addTouchdown.bind(this);
 
     this.state = {
       home: {
@@ -40,12 +41,23 @@ class App extends Component {
   
   render() {
     return (
-      <div className={styles.inner_contain}>
-
-      </div> 
+      <div className="app dinner_contain">
+        <div className="top-row">
+          <ScoreCard team={this.state.away}/>
+          <BigTimer gameClock={this.state.game.time}
+                    quarter={this.state.game.quarter}/>
+          <ScoreCard team={this.state.home}/>
+        </div>
+        <div className="bottom-row">
+          <GameStats stats={this.state.game} />
+        </div>
+        <div className="control-board">
+          <ScoreBtns />
+        </div>
+      </div>
     );
   }
 
 }
 
-ReactDOM.render(<App />, document.querySelector('.container'));
+ReactDOM.render(<App />, document.querySelector('.dcontainer'));

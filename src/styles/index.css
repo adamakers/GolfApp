@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -16,11 +18,16 @@ html {
 
 body {
     /* GENERAL FONT */
-    background-color: lightblue;
+    font-family: 'Lato', sans-serif;
+    background-color: #95a5a6;
 }
 
-.inner_contain {
-  background-color: red;
+.dinner_contain {
+  background-color: #141414;
   border-radius: 5px;
-  border: 2px solid green;
+  color: white;
+}
+
+.top-row {
+  display: flex;
 }

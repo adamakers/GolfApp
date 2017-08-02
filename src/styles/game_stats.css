@@ -1,0 +1,12 @@
+.game-stats {
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 46px;
+}
+
+.game-stats .num-box {
+  display: block;
+  border: 2px solid gray;
+  text-align: center;
+}

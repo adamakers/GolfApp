@@ -3,19 +3,19 @@
 
 import React from 'react';
 
+import styles from './../styles/score_card.css';
 
-
-const ScoreCard = (props) => {
-  const team = props.teamInfo
+const ScoreCard = ({team}) => {
 //create fn that will determine number of Time Outs team has and then draw it and then call it in render()
   return (
     <div className="team">
-      <h2>{team.name}</h2>
+      <h2 className="team-name pb-2">{team.name}</h2> 
       <div className="possession-box"></div>
-      <h3 className="team-score">{team.score}</h3>
-      
+      <div className="team-score-contain">
+        <h2 className="team-score">{team.score}</h2>  
+      </div>
       {/*loop through and fill out how many boxes per timeouts left  */}
-      <ul>
+      <ul className="timeout-contain">
         <li className="timeout-box"></li>
         <li className="timeout-box"></li>
         <li className="timeout-box"></li>
