@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
-import _ from 'lodash';
-
 //components
 import ScoreCard from './components/score_card';
 import BigTimer from './components/big_timer';
@@ -12,15 +10,20 @@ import ScoreBtns from './components/score_btns.js';
 //Styles
 import styles from './styles/index.css';
 
+//Other
+import _ from 'underscore';
+
 
 class App extends Component {
   constructor(props) {
     super(props);
 
+    this.giveScore = this.giveScore.bind(this);
+
     this.state = {
       home: {
         name: 'Broncos',
-        score: 21,
+        score: 0,
         timeouts: 3
       },
       away: {
@@ -39,13 +42,23 @@ class App extends Component {
 
   }//constructor
 
-  //////
+  //////////////////////
   //button callbacks
-  //////
-
-  scoreTouchdown() {
-    this.setState();
+  //////////////////////
+  
+  //score changer
+  giveScore(points, team) {
+    this.setState( prevState => {
+      let newTeamObj = _.extend({}, this.state[team]);
+      newTeamObj.score = prevState[team].score + points;
+      return {[team]: newTeamObj} 
+    });
   }
+
+  
+
+
+  /////////////////////
 
   render() {
     return (
@@ -60,8 +73,8 @@ class App extends Component {
           <GameStats stats={this.state.game} />
         </div>
         <div className="control-board">
-          <ScoreBtns />
-          <ScoreBtns />
+          <ScoreBtns action={this.giveScore} team="away"/> 
+          <ScoreBtns action={this.giveScore} team="home"/>
         </div>
       </div>
     );
