@@ -31,3 +31,8 @@ body {
 .top-row {
   display: flex;
 }
+
+.control-board {
+  display: flex;
+  justify-content: space-around;
+}

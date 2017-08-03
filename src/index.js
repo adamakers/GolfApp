@@ -37,8 +37,16 @@ class App extends Component {
       }
     };
 
+  }//constructor
+
+  //////
+  //button callbacks
+  //////
+
+  scoreTouchdown() {
+    this.setState();
   }
-  
+
   render() {
     return (
       <div className="app dinner_contain">
@@ -52,6 +60,7 @@ class App extends Component {
           <GameStats stats={this.state.game} />
         </div>
         <div className="control-board">
+          <ScoreBtns />
           <ScoreBtns />
         </div>
       </div>
