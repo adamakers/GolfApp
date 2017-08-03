@@ -32,11 +32,11 @@ const ScoreBtns = (props) => {
   return (
     <div className="score-btn-container">
       <button className="score-touchdown" onClick={() => {touchdown(props.team)}}>Touchdown</button> 
-      <button className="score-field-goal" onClick={() => {touchdown(props.team)}}>Field Goal</button>
-      <button className="score-safety" onClick={() => {touchdown(props.team)}}>Safety</button>
-      <button className="score-extra-point-one" onClick={() => {touchdown(props.team)}} disabled>Extra Point (1)</button>
-      <button className="score-extra-point-two" onClick={() => {touchdown(props.team)}} disabled>Extra Point (2)</button>
-      <button className="score-extra-point-zero" onClick={() => {touchdown(props.team)}} disabled>Missed FG</button>
+      <button className="score-field-goal" onClick={() => {fieldgoal(props.team)}}>Field Goal</button>
+      <button className="score-safety" onClick={() => {safety(props.team)}}>Safety</button>
+      <button className="score-extra-point-one" onClick={() => {extraPoint(props.team)}} disabled>Extra Point (1)</button>
+      <button className="score-extra-point-two" onClick={() => {extraPointTwo(props.team)}} disabled>Extra Point (2)</button>
+      {/* <button className="score-extra-point-zero" onClick={() => {touchdown(props.team)}} disabled>Missed FG</button> NEED TO CHANGE CALLBACK TO UNLOCK BUTTONS*/}
     </div>
   );
 };
