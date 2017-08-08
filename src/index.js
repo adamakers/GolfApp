@@ -19,6 +19,7 @@ class App extends Component {
     super(props);
 
     this.giveScore = this.giveScore.bind(this);
+    this.tick = this.tick.bind(this);
 
     this.state = {
       home: {
@@ -35,9 +36,9 @@ class App extends Component {
         quarter: 0,
         down: 0,
         ydToGo: 0,
-        time: '00:00',
         possession: 'team'
-      }
+      },
+      time: 900
     };
 
   }//constructor
@@ -55,6 +56,14 @@ class App extends Component {
     });
   }
 
+  //clock ticker
+  tick() {
+    this.setState(prevState => {
+      return {time: prevState.time - 1}
+    });
+    console.log(this.state.time);
+  }
+
   
 
 
@@ -65,7 +74,7 @@ class App extends Component {
       <div className="app dinner_contain">
         <div className="top-row">
           <ScoreCard team={this.state.away}/>
-          <BigTimer gameClock={this.state.game.time}
+          <BigTimer gameClock={this.state.time}
                     quarter={this.state.game.quarter}/>
           <ScoreCard team={this.state.home}/>
         </div>
@@ -76,6 +85,7 @@ class App extends Component {
           <ScoreBtns action={this.giveScore} team="away"/> 
           <ScoreBtns action={this.giveScore} team="home"/>
         </div>
+        <button onClick={() => {setInterval(this.tick, 1000)}}>TIMER</button>
       </div>
     );
   }
